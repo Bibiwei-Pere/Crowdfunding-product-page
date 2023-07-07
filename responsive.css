@@ -106,7 +106,7 @@
     
     .hero {
         border: 1px solid var(--Dark-gray2);
-        padding: 0px 40px 50px;
+        padding: 0px 20px 50px;
     }
     
     .hero div:last-child {
@@ -124,7 +124,7 @@
     
     .mastercraft img {
         height: 70px;
-        margin: -37px 0 0 100px;
+        margin: -37px auto;
         width: 70px;
     }
     
@@ -151,7 +151,7 @@
         border: 1px solid var(--Dark-gray2);
         flex-direction: column;
         gap: 0px;
-        padding: 20px 40px 50px 40px;
+        padding: 20px 20px 50px;
         background-color: var(--White);
     }
     
@@ -193,14 +193,14 @@
         border-radius: 20px;
         background-color: var(--Moderate-cyan);
         height: 100%;
-        width: 0%;
+        width: 80%;
         transition: width 0.5s;
     }
     
     /* Third section */
     .third_section {
         gap: 1px;
-        padding: 50px 40px 10px;
+        padding: 50px 20px 10px;
         border: 1px solid var(--Dark-gray2);
     }
     
@@ -210,7 +210,7 @@
     }
     
     .wrapper_1, .wrapper_2, .wrapper_3 {
-        padding: 40px 30px;
+        padding: 40px 20px;
         margin-bottom: 30px;
     }
     
@@ -240,8 +240,9 @@
     }
 
     .btn_3 {
-        padding: 20px;
+        padding: 20px 0 !important;
         font-weight: bold;
+        width: 100px !important;
     }
     
     /* Selection Modal */
