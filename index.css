@@ -56,6 +56,7 @@ ul {
 a {
     text-decoration: none;
     color: var(--White);
+    text-align: center;
 }
 
 a:hover, a:active {
@@ -133,7 +134,7 @@ a:hover, a:active {
     background-color: var(--White);
 }
 
-.hero div {
+.hero .hero_sub {
     display: flex;
     width: 100%;
     margin-top: 40px;
@@ -166,25 +167,41 @@ button:hover, button:active {
     background: var(--Dark-cyan);
 }
 
-#btn_2 {
-    background-image: url("/images/icon-bookmark.svg");
-    border-radius: 30px;
-    border: none;
-    padding: 20px 0px 20px 40px;
+.bookmark {
     width: 200px;
-    color: var(--Black);
+}
+
+.bookmark-btn {
+    border-radius: 30px;
+    padding: 20px 0px 20px 40px;
+    margin: 0 !important;
+    width: 100% !important;
     font-size: 18px;
-    background-repeat: no-repeat;
-    background-size: 60px;
+    background-color: var(--Dark-gray2);
 }
 
-#btn_2a {
-    display: none;
+.bookmark-btn:hover, .bookmark-btn:active {
+    background-color: var(--White2);
+    color: var(--Moderate-cyan);
 }
 
-#btn_2:hover, #btn_2:active, #btn_2a:hover, #btn_2a:active {
-    background-image: url("images/icon-bookmark2.svg");
-    color: var(--Dark-cyan);
+.bookmarked-btn {
+    content: 'Bookmarked';
+    color: var(--Moderate-cyan);
+}
+
+.bookmark-svg {
+    position: absolute;
+    margin: 2px 0 0 -33px;
+    transform: translateX(2rem);
+}
+
+.bookmarked circle {
+    fill: var(--Moderate-cyan);
+}
+
+.bookmarked path {
+    fill: var(--White);
 }
 
 /* Second section */
@@ -220,19 +237,20 @@ button:hover, button:active {
     border-left: 2px solid var(--Dark-gray2);
 }
 
-.line {
-    height: 13px;
-    margin-top: 22px;
-    border-radius: 20px;
-    background-color: var(--White2);
+.progress-bar {
+    width: 100%;
+    height: 1rem;
+    border-radius: 10px;
+    background-color: hsl(0, 0%, 95%);
+    display: flex;
 }
 
-.line_2 {
-    border-radius: 20px;
+.progress-bar-filled {
+    border-radius: 10px;
+    width: 50%;
     background-color: var(--Moderate-cyan);
-    height: 100%;
-	width: 80%;
-	transition: width 0.5s;
+    flex: 0;
+    flex-basis: 50%;
 }
 
 /* Third section */
@@ -288,14 +306,30 @@ button:hover, button:active {
 .btn_3 {
     padding: 14px;
     width: 180px;
+    background-color: var(--Moderate-cyan);
+    border-radius: 30px;
+    border: none;
+    padding: 20px 10px;
+    width: 200px;
+    color: var(--White);
+    font-size: 18px;
 }
 
-.wrapper_3 {
+.btn_3:hover, .btn_3:active {
+    text-decoration: none;
+    background-color: var(--Dark-cyan) !important;
+}
+
+ .wrapper_3 {
     opacity: 0.5;
 }
 
 .wrapper_3 .btn_3 {
     background-color: var(--Dark-gray);
+} 
+
+.wrapper_3 .btn_3:hover, .wrapper_3 .btn_3:active {
+    background-color: var(--Dark-gray) !important;
 }
 
 /* Selection Modal */
@@ -421,7 +455,7 @@ button:hover, button:active {
     align-items: center;
 }
 
-input[type=tel] {
+input[type=number] {
     width: 130px;
     border-radius: 30px;
     height: 100%;
@@ -431,7 +465,7 @@ input[type=tel] {
     font-weight: bold;
 }
 
-input[type=tel]:hover, input[type=tel]:active {
+input[type=number]:hover, input[type=number]:active {
     border: 2px solid var(--Moderate-cyan) !important;
 }
 
@@ -525,11 +559,6 @@ input[type=tel]:hover, input[type=tel]:active {
     display: none !important;
 }
 
-.shadow.active {
-    opacity: 0.05;
-    z-index: -100;
-}
-
 .shadow1.active {
     opacity: 0.55;
     z-index: -100;
@@ -539,5 +568,45 @@ input[type=tel]:hover, input[type=tel]:active {
     position: absolute;
     margin: -22px 0 0;
     font-size: 14px;
+}
+
+/* Overlay */
+.overlay {
+    position: fixed;
+    inset-block: 0%;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 3;
+    /* transition: transform 0.1s cubic-bezier(0.12, 0, 0.39, 0); */
+}
+
+.overlay-hidden {
+    transform: translate(-120%);
+}
+
+.out-of-stock-bg {
+    background-color: var(--Dark-gray);
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.error-msg {
+    color: red;
+    font-weight: 700;
+}
+
+.margin-top {
+    margin-top: 1.5rem;
 }
 
