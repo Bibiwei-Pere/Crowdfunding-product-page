@@ -109,41 +109,31 @@
         padding: 0px 20px 50px;
     }
     
-    .hero div:last-child {
-        display: flex;
-        gap: 10px;
-        width: 100%;
-        margin-top: 15px;
-    }
-    
     .mastercraft {
-        width: 50px;
-        height: 50px;
-        margin-top: 0 !important;
+        margin: 0 !important;
     }
     
     .mastercraft img {
-        height: 70px;
-        margin: -37px auto;
-        width: 70px;
+        margin: -26px auto;
     }
     
     button {
         font-size: 16px;
     }
-    
-    #btn_2 {
-        display: none;
+
+    .bookmark {
+        width: 87px;
     }
 
-    #btn_2a {
-        display: block;
-        background-image: url("/images/icon-bookmark.svg");
-        border: none;
-        background-color: transparent;
-        width: 60px;
-        background-repeat: no-repeat;
-        background-size: 100% 100%;
+    .bookmark-btn {
+        display: none;
+        position: absolute;
+    }
+
+    .bookmark-svg {
+        position: relative;
+        margin: 0;
+        transform: translateX(2rem);
     }
     
     /* Second section */
@@ -176,25 +166,29 @@
         margin-top: -22px;
     }
     
+    .backers::before, .backers::after {
+        display: block;
+        content: '';
+        width: 4rem;
+        height: 2px;
+        background-color: hsl(0, 0%, 95%) !important;
+        margin-inline: auto;
+    }
+    
+    .backers::before {
+        transform: translateY(-1.5rem);
+    }
+    
+    .backers::after {
+        transform: translateY(1.5rem);
+    }
+
     .border-left {
-        position: relative;
-        border-top: 2px solid var(--Dark-gray2);
-        border-left: none;
+        border: none !important;
     }
-    
-    .line {
-        height: 13px;
-        margin-top: 22px;
-        border-radius: 20px;
-        background-color: var(--White2);
-    }
-    
-    .line_2 {
-        border-radius: 20px;
-        background-color: var(--Moderate-cyan);
-        height: 100%;
-        width: 80%;
-        transition: width 0.5s;
+
+    .progress-bar {
+        margin-top: 15px;
     }
     
     /* Third section */
@@ -240,9 +234,8 @@
     }
 
     .btn_3 {
-        padding: 20px 0 !important;
+        padding: 20px;
         font-weight: bold;
-        width: 180px !important;
     }
     
     /* Selection Modal */
@@ -252,7 +245,7 @@
     
     .project_section {
         width: 90%;
-        padding: 50px 30px;
+        padding: 50px 20px;
         gap: 25px;
     }
     
@@ -262,7 +255,7 @@
     
     .box {
         display: flex;
-        padding: 40px 25px 35px;    
+        padding: 40px 20px 35px;    
         gap: 25px;
     }
     
@@ -271,9 +264,13 @@
         font-size: 18px;
     }
 
+    .box h3:hover, .box h3:active  {
+        color: var(--Moderate-cyan);
+        margin-bottom: 40px;
+    }
+
     .box p {
         text-align: left;
-        font-size: 18px;
         position: relative;
         margin-left: -40px;
     }
@@ -317,21 +314,22 @@
         margin: -30px 0 40px 0;
     }
 
-    
     .activate {
         display: none;
         flex-direction: column;
         gap: 25px;
         justify-content: center;
         border-top: 1px solid var(--Dark-gray2);
-        padding: 35px 30px 30px;    
+        padding: 35px 20px 30px;    
         align-items: center;
     }
     
     .activate span {
         display: flex;
+        width: 100%;
     }
-    input[type=tel] {
+
+    input[type=number] {
         width: 50%;
         border: 1px solid var(--Dark-gray2);
         outline: none;
@@ -345,7 +343,7 @@
     
     .close_modal {
         position: relative;
-        margin: -1rem -1rem;
+        margin: 0;
     }
     
     .btn_4 {
@@ -367,8 +365,8 @@
         align-items: center;
         justify-content: center;
         background-color: var(--White);
-        padding: 40px;
-        margin-top: -180px;
+        padding: 25px 30px;
+        margin-top: 0;
         border-radius: 10px;
         z-index: 100;
         gap: 30px;
@@ -379,16 +377,16 @@
     }
     
     .success_wrapper h2 {
+        text-align: center;
         margin: 10px 0 0;
     }
     
     .success_wrapper p {
-        text-align: center;
+        text-align: left;
     }
     
     .success_wrapper button {
         width: 115px;
         padding: 18px;
     }
-    
     }
