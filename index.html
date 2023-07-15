@@ -4,13 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.svg">
   <link rel="stylesheet" href="/index.css">
   <link rel="stylesheet" href="/responsive.css">
-  <title>Frontend Mentor | Crowdfunding product page</title>
+  <title>Crowdfunding product page</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <nav id="navbar-scroll" class="navbar">
@@ -19,9 +19,9 @@
       </h1>
       <div id="menu">
         <ul class="nav-menu">
-          <li class="nav-items"><a href="#about" class="nav-link">About</a></li>
-          <li class="nav-items"><a href="#about" class="nav-link">Discover</a></li>
-          <li class="nav-items"><a href="#about" class="nav-link">Get Started</a></li>
+          <li class="nav-items"><a href="#" class="nav-link">About</a></li>
+          <li class="nav-items"><a href="#" class="nav-link">Discover</a></li>
+          <li class="nav-items"><a href="#" class="nav-link">Get Started</a></li>
         </ul>
         <div class="hamburger">
           <img class="bar" src="/images/icon-hamburger.svg" alt="hamburger">
@@ -33,26 +33,33 @@
     </nav>
 
     <div class="bg_image shadow"></div>
-    <main class="container shadow shadow1">
+    <main class="container shadow1">
       <div class="hero">
-        <div class="mastercraft"><img src="/images/logo-mastercraft.svg" alt="mastercraft"></div>
+        <div class="mastercraft hero_sub"><img src="/images/logo-mastercraft.svg" alt="mastercraft"></div>
         <h1>Mastercraft Bamboo Monitor Riser</h1>
         <p>A beautiful & handcrafted monitor stand to reduce neck and eye strain.</p>
-        <div>
+        <div class="hero_sub">
           <button class="btn_1 back_button">Back this project</button>
-          <input type="button" id="btn_2" value="Bookmark">
-          <input type="button" id="btn_2a">
+          <div class="bookmark">
+            <svg  class="bookmark-svg" width="56" height="56" xmlns="http://www.w3.org/2000/svg">
+                <g fill="none" fill-rule="evenodd">
+                    <circle fill="#2F2F2F" cx="28" cy="28" r="28"/>
+                    <path fill="#B1B1B1" d="M23 19v18l5-5.058L33 37V19z"/>
+                </g>
+            </svg>
+            <button class="bookmark-btn">Bookmark</button>
+          </div>
         </div>
       </div>
 
       <div class="second_section">
         <div class="numbers">
           <span>
-            <h2 class="progress-text">$89,914</h2>
+            <h2 id="amount">$89,914</h2>
             <p>of $100,000 backed</p>
           </span>
-          <span class="border-left">
-            <h2 class="progress1">5,007</h2>
+          <span class="border-left backers">
+            <h2 id="num-of-backers">5,007</h2>
             <p>total backers</p>
           </span>
           <span class="border-left">
@@ -60,8 +67,8 @@
             <p class="timers">days left</p>
           </span>
         </div>
-        <div class="line">
-          <div class="line_2 progress-bar"></div>
+        <div class="progress-bar">
+          <div class="progress-bar-filled"></div>
         </div>
       </div>
 
@@ -81,7 +88,7 @@
           <p>You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and you’ll be added to a special Backer member list.</p>
           <div class="numbers_2">
             <span><h4>101</h4><p>left</p></span>
-            <button class="btn_3 back_button">Select Reward</button>
+            <a href="#reward--1" class="btn_3 reward-btn" data-reward="1">Select Reward</a>
           </div>
         </div>
         <div class="wrapper_2">
@@ -89,7 +96,7 @@
           <p>You get a Black Special Edition computer stand and a personal thank you. You’ll be added to our Backer member list. Shipping is included.</p>
           <div class="numbers_2">
             <span><h4>64</h4><p>left</p></span>
-            <button class="btn_3 back_button">Select Reward</button>
+            <a href="#reward--2" class="btn_3 reward-btn" data-reward="2">Select Reward</a>
           </div>
         </div>
         <div class="wrapper_3">
@@ -97,7 +104,7 @@
           <p>You get two Special Edition Mahogany stands, a Backer T-Shirt, and a personal thank you. You’ll be added to our Backer member list. Shipping is included.</p>
           <div class="numbers_2">
             <span><h4>0</h4><p>left</p></span>
-            <button class="btn_3">Out of Stock</button>
+            <a href="#reward--3" class="btn_3 out-of-stock-bg reward-btn" data-reward="3">Out of Stock</a>
           </div>
         </div>
       </div>
@@ -108,10 +115,10 @@
       <div class="project_section">
         <h3>Back this project<div class="close_modal"><img src="/images/icon-close-modal.svg" alt=""></div></h3>
         <p>Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?</p>
-        <div class="project_wrapper">
+        <div class="project_wrapper modal-stand--1" id="reward--1">
           <div class="box">
             <div class="checkbox">
-              <input name="radio" id="moneys" type="radio">
+              <input name="radio" type="radio">
               <span class="checkmark"></span>
             </div>
             <div>
@@ -119,16 +126,15 @@
               <p>Choose to support us without a reward if you simply believe in our project. As a backer, you will be signed up to receive product updates via email.</p>
             </div>            
           </div>
-          <div class="activate">
+          <div class="pledging activate">
             <p>Enter your pledge</p>
             <span>
-              <p class="errmoney"></p>
-              <input type="tel" class="money">
-              <button class="btn_4 button_continue">Continue</button>
+              <input type="number" class="pledge-input--1" min="1" max="24" minlength="2" maxlength="2" required>
+              <button class="btn_4 button_continue"  data-tab="1">Continue</button>
             </span>
           </div>
         </div>
-        <div class="project_wrapper">
+        <div class="project_wrapper modal-stand--2" id="reward--2">
           <div class="box">
             <div class="checkbox">
               <input name="radio" type="radio">
@@ -144,19 +150,18 @@
               <span class="left_mobile"><h4>101<h4><p>left</p></span>
             </div>            
           </div>
-          <div class="activate">
+          <div class="pledging activate">
             <p>Enter your pledge</p>
             <span>
-              <p class="errmoney1"></p>
-              <input type="tel" value="25" class="money1">
-              <button class="btn_4 button_continue">Continue</button>
+              <input type="number" class="pledge-input--2" min="25" max="74" minlength="2" maxlength="2" required>
+              <button class="btn_4 button_continue"  data-tab="2">Continue</button>
             </span>
           </div>
         </div>
-        <div class="project_wrapper">
+        <div class="project_wrapper modal-stand--3" id="reward--3">
           <div class="box">
             <div class="checkbox">
-              <input name="radio" type="radio">
+              <input name="radio" type="radio" data-input="3">
               <span class="checkmark"></span>
             </div>
             <div>
@@ -169,12 +174,11 @@
               <span class="left_mobile"><h4>101<h4><p>left</p></span>
             </div>   
           </div>
-          <div class="activate">
+          <div class="pledging activate">
             <p>Enter your pledge</p>
             <span>
-              <p class="errmoney2"></p>
-              <input type="tel" value="75" class="money2">
-              <button class="btn_4 button_continue">Continue</button>
+              <input type="number" class="pledge-input--3" min="75" max="199" minlength="2" maxlength="3" required>
+              <button class="btn_4 button_continue"  data-tab="3">Continue</button>
             </span>
           </div>
         </div>
@@ -191,13 +195,13 @@
               </div>
               <p>You get two Special Edition Mahogany stands, a Backer T-Shirt, and a personal thank you. You’ll be added
                 to our Backer member list. Shipping is included.</p>
-              <span class="left_mobile"><h4>101<h4><p>left</p></span>
+              <span class="left_mobile"><h4>0<h4><p>left</p></span>
             </div>            
           </div>
-          <div class="activate">
+          <div class="pledging activate">
             <p>Enter your pledge</p>
             <span>
-              <input type="tel" value="200" class="money">
+              <input type="number" min="200" minlength="3" required>
               <button class="btn_4">Continue</button>
             </span>
           </div>
@@ -207,19 +211,17 @@
   <!-- Selection modal end -->
 
   <!-- Success modal start -->
-    <section class="container_3 hide shadow">
+    <section class="container_3 hide">
       <div class="success_wrapper">
         <img src="/images/icon-check.svg" alt="check">
         <h2>Thanks for your support!</h2>
         <p>Your pledge brings us one step closer to sharing Mastercraft Bamboo Monitor Riser worldwide. You will get
         an email once our campaign is completed.</p>
-        <button id="btnIncrease">Got it!</button>
+        <button class="got-it-btn">Got it!</button>
       </div>
     </section>
-  <!-- 
-  
-   -->
 
+  <div class="overlay overlay-hidden"></div>
   <!-- Success modal end -->
   <script src="/index.js"></script>
 </body>
